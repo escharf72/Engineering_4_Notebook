@@ -35,4 +35,90 @@ while(True):
     exit() 
     
  ``` 
+ 
+ ## Calculator ##
+ **Description:** Create a program that find the sum, difference, product, quotient, and modulo of two numbers entered by the user. The two numbers will go through one function five times and print the proper numbers. 
+ **Reflection:** Troubleshooting is a universally helpful skill. This code required a lot of troubleshooting and simplifying to make sure that we weren't tackling too many variables at the same time. Printing is the best way to get feedback and figure out where the disconnect is within the code and simplifying (commenting out) your code can help you isolate the issue. Learning these skills on simpler and shorter codes will serve us well in the future when we encounter problems in our code.
+ 
+ [Replit Code Link](https://repl.it/join/kkywjvjm-escharf72) 
+ ```
+#Calculator Code
+#Written by: Abigail Paquette and Elisabeth Scharf
+
+num = 1 #num is a simple variable that we use to determine when the calculator cycle has run its course and it is time to prompt the user for more numbers
+
+#this is the aptly named doMath function. We send it three values that it needs in order to perform its tasks: the two numbers and a number corresponding to the opperation it is supposed to perform 
+def doMath(a,b,c):   
+  int1 = int(a)
+  int2 = int(b)
+  rep = int(c)
+  
+  if rep == 1:
+    return("The sum is: " + str(int1 + int2))
+  if rep ==2:
+    return("The difference is:" + str(int1-int2))
+  if rep == 3:
+    return("The product is:" + str(int1*int2))
+  if rep == 4:
+    div = round((int1/int2),2)   
+    return("The quotient is:" + (str(div)))
+  if rep == 5:
+    return("The modulo is:" + str(int1%int2))
+
+
+while True:
+  if num == 1:
+    a = input("Please enter you first number:")
+    b = input("Please enter your second number:")
+    num = 2
+  print(doMath(a,b,1))
+  print(doMath(a,b,2))
+  print(doMath(a,b,3))
+  print(doMath(a,b,4))
+  print(doMath(a,b,5))
+  num = 1
+  
+  ``` 
+  
+  ## Quadratic Solver ##
+  **Description:**
+  **Reflection:**
+  
+  
+[Replit Code Link](  
+  ```
+  #Quadratic Solver
+#Written by: Elisabeth Scharf and Abigail Paquette
+
+def quadCalc(a,b,c):
+  intA = int(a)
+  intB = int(b)
+  intC = int(c)
+  disc = ((intB*intB)-(4*intA*intC))
+  Q1 = (-intB / (2*intA))
+  if disc < 0:
+    return("The function {0}x^2 + {1}x + {2} has no real roots.".format(intA, intB, intC))
+  if disc == 0:
+    return("The root is: {0}".format(Q1))
+  if disc > 0:
+    pos = ((disc**0.5)/(2*intA))
+    w = round((Q1 - pos),5)
+    x = round((Q1 + pos),5)
+    return([w,x])
+
+
+while True:
+    print("Enter the coefficients for ax^2 + bx + c = 0")
+    a = input("Enter the first coefficient: ")
+    b = input("Enter the second coefficient: ")
+    c = input("Enter the third coefficient: ")
+    returnVal = quadCalc(a,b,c)
+    if isinstance(returnVal,list):
+      print("Two roots:")
+      for root in returnVal:
+        print(root)
+    else:
+      print(returnVal)  
+      
+``` 
 
