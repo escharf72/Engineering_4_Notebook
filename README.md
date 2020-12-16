@@ -81,8 +81,8 @@ while True:
   ``` 
   
   ## Quadratic Solver ##
-  **Description:**
-  **Reflection:**
+  **Description:** Create a program that prints the roots of a quadratic equation whose coefficients are entered by a user. (If there are no roots it will print none)
+  **Reflection:** Math concepts can actually be helpful outside of math class. ;) Again, splitting a task into smaller steps is the way to go, especially when layers of math could potenetially obscure the issue, making it hard to know what to fix. By startin small and layering on various aspects, you have a much more straightforward troubleshooting process because you aren't dealing with too many variables at one time. Pseudocoding is a great way to break it down into small steps and not get lost in or confused by the jargon. You take each step in bite-sized pieces and are able to do specific research if you don't know the jargon but do know the logic behind the task. 
   
   
 [Replit Code Link](https://repl.it/join/kppoeevc-apaquet37)  
@@ -90,21 +90,21 @@ while True:
   #Quadratic Solver
 #Written by: Elisabeth Scharf and Abigail Paquette
 
-def quadCalc(a,b,c):
+def quadCalc(a,b,c): #We use input to receive the coefficients from the user and then send them to this function in the form of variables a,b, and c
   intA = int(a)
   intB = int(b)
   intC = int(c)
-  disc = ((intB*intB)-(4*intA*intC))
+  disc = ((intB*intB)-(4*intA*intC))  #Disc stands for discriminant 
   Q1 = (-intB / (2*intA))
-  if disc < 0:
+  if disc < 0:   #If statements move the quadratic equation in question into one of 3 buckets that determines the next steps 
     return("The function {0}x^2 + {1}x + {2} has no real roots.".format(intA, intB, intC))
   if disc == 0:
-    return("The root is: {0}".format(Q1))
+    return("The root is: {0}".format(Q1)) 
   if disc > 0:
-    pos = ((disc**0.5)/(2*intA))
-    w = round((Q1 - pos),5)
+    pos = ((disc**0.5)/(2*intA)) 
+    w = round((Q1 - pos),5) # From the center, we move a certain amount in the pos and neg directions to find the roots
     x = round((Q1 + pos),5)
-    return([w,x])
+    return([w,x])  # Return an array of those values
 
 
 while True:
@@ -112,8 +112,8 @@ while True:
     a = input("Enter the first coefficient: ")
     b = input("Enter the second coefficient: ")
     c = input("Enter the third coefficient: ")
-    returnVal = quadCalc(a,b,c)
-    if isinstance(returnVal,list):
+    returnVal = quadCalc(a,b,c)   # Calling the function! 
+    if isinstance(returnVal,list): 
       print("Two roots:")
       for root in returnVal:
         print(root)
@@ -122,9 +122,8 @@ while True:
       
 ``` 
 ## Strings and Loops ## 
-**Description:**
-
-**Reflection:** 
+**Description:** Take a simple sentence and print it in a vertical orientation wtih dashes in place of spaces
+**Reflection:** This code ended up being fairly simple and short, but there was a lot of research and learning that went on behind it. Length of code does not necessarily determine complexity. I learned that I need to do some more research and practice more with lists and arrays in order to be able to use them in my own projects-I see the practicality of arrays but still struggle to understand quite how to use them and make them work in a variety of contexts. 
 
 [Replit Code Link](https://repl.it/join/lwjzafvj-escharf72) 
 
@@ -133,90 +132,19 @@ while True:
 #Written by Abby Paquette and Elisabeth Scharf
 
 # This is the library that allows us to use arrays, which are much more efficient in storing large amounts of information than lists are
+# Also I learned that you can import a library as a different word which helps keep the code clean and readable
 import numpy as np 
 
 txt = input("Type a simple sentence: ") #Prompting the user... 
 
-letters = list(txt) # input to list
+letters = list(txt) # input to list 
 
 
 array1 = np.array(letters) # list to array
 
 for i in letters:
-    #str(i).replace((array1[2]), '-')
-    #txt.split(" ") # splitting it up at the spaces
     newStr = i.replace(' ', '-') #replacing the spaces with - 
     print(newStr) #printing the modified sequence
     
 ``` 
 
-## Hangman ## 
-**Description:**  
-
-**Reflection:** 
-
-[Replit Code Link](https://repl.it/join/hhhiyscw-escharf72) 
-```
-# Hangman code
-# Written by Abby Paquette and Elisabeth Scharf
-
-#So technically we have a function and everything that we need I think for this code. We might be done?? 
-
-from time import sleep
-import os
-from numpy import array
-import numpy as np
-wrong = 0
-right = 0
-point = 0
-  
-# Player 1 word request 
-word = input("Player 1, type in the secret word: ")
-length = len(word)
-secret = list(word)
-sleep(2)
-os.system('clear') 
-val = word
-spaces = ['_'] * length
-# spaces = np.array(repr('_ '*len(val)))
-
-#printing the msp
-def msp (x):
-  msp = [" 0 ","\\|/ "," |","/ \\ "]
-  if x == 2:
-    print(msp[0])
-  if x == 3:
-    print(msp[0])
-    print(msp[1])
-  if x == 4:
-    print(msp[0])
-    print(msp[1])
-    print(msp[2])
-  print(msp[x-1])
-
-while "_" in spaces and wrong < 4:
-  print(spaces)
-  cue2 = input("Player 2, please guess a letter: ") 
-  try: 
-    pos = secret.index(cue2)
-    pos2 = [i for i in range(len(secret)) if secret[i] == cue2]
-    print(pos2)
-    
-    val4 = len(pos2)
-    while val4 > 1 and val4 != point:
-      spaces[pos2[point]] = cue2
-      point = point + 1
-    spaces[pos] = cue2
-
-  
-  except: 
-    print("You are incorrect")
-    wrong = wrong+1
-    msp(wrong)
-else:
- print(spaces)
- if wrong < 4:
-   print("Congratulations!")
- print("Game over")
- 
- ``` 
