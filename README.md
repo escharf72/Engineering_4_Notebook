@@ -280,10 +280,12 @@ while "_" in spaces and wrong < 7:
     val4 = len(pos)  #val4 is a variable that is the length of the array (we are trying to figure out how many times the letter that was guessed is in the word)
 
     while val4 > 1 and val4 != point: #If there is more that one instance of the guessed letter and it is in the word, do this:
+      
       spaces[pos[point]] = cue2  # cue2 is an array that replaces a space in the spaces array with pos (the guess) in the first location (position 0 of the pos array is                                   the first number that shows the position of the guess in the secret array, which lines up with the spaces array) 
-    point = point + 1    #We add one to point so now we are going to replace a space in the spaces array with the guess in the position                                                             described with the second number in the pos array. It then repeats because val4 isn't 1. If val4 is more than 2 numbers long, then it                                      will repeat again. It goes until there aren't any numbers left in the val4 array. 
+      
+      point = point + 1    #We add one to point so now we are going to replace a space in the spaces array with the guess in the position                                                             described with the second number in the pos array. It then repeats because val4 isn't 1. If val4 is more than 2 numbers long, then it                                      will repeat again. It goes until there aren't any numbers left in the val4 array. 
   
- spaces[pos[0]] = cue2
+  spaces[pos[0]] = cue2
 
   
   except: 
