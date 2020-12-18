@@ -151,3 +151,152 @@ for i in letters:
     
 ``` 
 
+## Hangman (Or Man-Shaped Piñata) ##
+**Description:** Design a program that allows two users to play hangman. 
+
+**Reflection:** This was quite a project, but it was a fun goal to work towards. This code is an excellent example of the necessity of planning and pseudocoding before sitting down to code.
+This code taught me many lessons:
+1. Pseudocode first and split the code into small tasks:
+
+We did our best to split the task into small, acheivable steps (see below). This made troubleshooting easier and (maybe more importantly) kept us motivated with small victories rather than wading through a chunk of error-filled code. You can't make a tower of blocks all at once-you have to add one block at a time and make sure that each is stacked properly so it can support the ones that will be on top of it. 
+
+2. Coding is 10% skill, 50% logic, and 40% motivation/mindset
+
+In my years of taking engineering I have never really enjoyed the coding aspect of the class. I'm not naturally a very logical person so it requires more work for me to think through the process. But while working on the coding assignements this year, I have realized that a mindset shift is really what I need in order to begin to grow in my coding skills. I may not be the most logical person in the world, but coding helps me to build my logical reasoning and in turn the logical reasoning skills will make me a better coder. (A cycles of increasing benefits!) This assignment also taught me that I enjoy the process a lot more if I approach it as a challenge or a game that I want to do my best on. 
+
+3. Collaborative coding is the way to go (when possible)
+
+For this assignment I worked with a classmate and though we were occasionally treading on eachothers' toes and trying to run the code at the same time, the benefits of this collaboration made the inconveniences worth it. We were able to provide each other with motivation when the other was feeling frustrated, be a second pair of eyes to catch mistakes in the code, and be another person with whom they could verbally process the logic of a piece of code they were writing. Sometimes, if we were fed up with the specific task we were working on, we would switch assignments in order to 1. be a fresh pair of eyes on the task and 2. not go crazy or do more damage.
+
+4.Google is your friend
+
+I know I say this in nearly every reflection, but it is very true. There are so, so, so, so many resources out there and there is a 99% chance that someone else has experienced the same problem (or a similar problem) before. Collaboration is a crucial part of engineering- we aren't meant to create in bubble. Google is an excellent resource, especially when in-person collaboration and contact is harder. 
+
+[Replit Code Link](https://repl.it/join/hhhiyscw-escharf72)
+
+**Pseudocode & Planning**
+```
+Ok, so the small tasks:
+1. Player 1 gives the word and then the screen clears
+  os.system(clear) Apparently this clears the screen
+  We'll probably use an input just like normal 
+
+2. Prompt player 2 to guess a letter
+  Again I think just input
+  Maybe we add a "Nope!" or a "Good Job!" in as a response
+  The validation/response could be part of early step 3
+
+3. It figures out whether the letter is in the word or not
+  Do we need to turn the original word input into a list, str, array, or other? (probably array because it is heavily based on position in the word?)
+  It also has to recognize if it's in the word more than once
+4. Find the length of the word and turn it into spaces
+  Wasn't there a function for that? Yeah I think there was, maybe i? yeah, and len(i) or something like that
+  Should we do this at the beginning and just store it as an array or something like that to make it easier later? Maybe yeah, I think info gathering at the start is always good
+
+5. Fill in those spaces with the correct guesses
+  It seems like we'll really need to figure out how to use arrays to access positions of values stored in the array
+
+6. If it's incorrect, print a message and add to the image
+  Sub-task: how to draw the image
+  Should we make a function for this?
+
+7. Guess counter? 
+  Should we have something that keeps track of player 2's guesses (This could be one of those var = var-1 in the loop or something like that)
+
+8. Exit if guesses = 0 OR player 2 guesses the word 
+
+Anything else we should include in the pseudocode?
+This will be a good thing to put in github 
+
+Notes: 
+  Arrays can do math, lists can't
+  [square brackets create a list]
+  array.sort()
+  list.sort()
+  for i,j in enumerate(myList):
+    print(i, end_"  --  ")
+    print(j)
+
+  pop-takes off the last
+  apend - add one 
+  print(myList[2]) (this will print just the third element) 
+```
+
+**Final code** 
+```
+# Hangman code
+# Written by Abby Paquette and Elisabeth Scharf
+
+from time import sleep
+import os
+#from numpy import array
+#import numpy as np
+wrong = 0
+#right = 0
+
+  
+# Player 1 word request 
+word = input("Player 1, type in the secret word: ")
+length = len(word)
+secret = list(word)
+sleep(2)
+os.system('clear') 
+val = word
+spaces = ['_'] * length
+# spaces = np.array(repr('_ '*len(val)))
+
+#printing the msp
+def msp (x):
+  #msp = [" 0 ","\\|/ "," |","/ \\ "]
+  msp = [" 0 "]
+  if x >= 2:
+    msp.append(" |")
+  if x >= 3:
+    msp.append(" |")
+    #print(*msp, sep='\n')
+  if x >= 4:
+    msp.append("/")
+  if x >= 5:
+    msp.pop()
+    msp.append("/ \\")
+  if x >= 6:
+    msp.pop(1)
+    msp.insert(1, "\\|")
+  if x == 7:
+    msp.pop(1)
+    msp.insert(1, "\\|/")
+  print(*msp, sep="\n")
+
+while "_" in spaces and wrong < 7:
+  print(spaces)
+  cue2 = input("Player 2, please guess a letter: ") 
+ 
+  try: 
+    
+    pos = [i for i in range(len(secret)) if secret[i] == cue2] #This looks to see if it can be found more than once in the array and returns an array if so
+    
+    point = 0
+
+    val4 = len(pos)  #val4 is a variable that is the length of the array (we are trying to figure out how many times the letter that was guessed is in the word)
+
+    while val4 > 1 and val4 != point: #If there is more that one instance of the guessed letter and it is in the word, do this:
+      
+      spaces[pos[point]] = cue2  # cue2 is an array that replaces a space in the spaces array with pos (the guess) in the first location (position 0 of the pos array is                                   the first number that shows the position of the guess in the secret array, which lines up with the spaces array) 
+      
+      point = point + 1    #We add one to point so now we are going to replace a space in the spaces array with the guess in the position                                                             described with the second number in the pos array. It then repeats because val4 isn't 1. If val4 is more than 2 numbers long, then it                                      will repeat again. It goes until there aren't any numbers left in the val4 array. 
+  
+  spaces[pos[0]] = cue2
+
+  
+  except: 
+    print("You are incorrect")
+    wrong = wrong+1
+    msp(wrong)
+else:
+ print(spaces)
+ if wrong < 7:
+   print("Congratulations!")
+ print("Game over")
+ print("The correct word was: " + word)
+ 
+ ``` 
