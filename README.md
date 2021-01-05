@@ -173,7 +173,8 @@ For this assignment I worked with a classmate and though we were occasionally tr
 I know I say this in nearly every reflection, but it is very true. There are so, so, so, so many resources out there and there is a 99% chance that someone else has experienced the same problem (or a similar problem) before. Collaboration is a crucial part of engineering- we aren't meant to create in bubble. Google is an excellent resource, especially when in-person collaboration and contact is harder. 
 
 [Replit Code Link](https://repl.it/join/hhhiyscw-escharf72)
-
+<img src="Media/Screenshot%202021-01-05%20at%202.00.20%20PM.png" width="500">
+<img src="Media/Screenshot%202021-01-05%20at%202.00.51%20PM.png" width="500">
 **Pseudocode & Planning**
 ```
 Ok, so the small tasks:
