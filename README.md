@@ -318,4 +318,11 @@ Troubleshooting tips (most are chromebook-specific):
 - A troubleshooting standby: if your LED isn't turning on and it seems like it should: 1. Do you have a resistor? 2. Is your wiring correct? (Look up a quick Fritzing diagram to check) 3. Could the LED be fried? (Check with a button battery or simple circuit) 4. Try another pin! Quite often pins will be broken or will only be able to be used for certain things and you just didn't know. 5. If not any of these things, then go back and check your code again. 
 - The password that it asks you for in the SSH app is raspberry, not your wifi password. (It took me a very long time to figure this out :) 
 
+<img src="Media/GPIO-SSH-CODE.png" width="500">
+
+<img src="Media/Running-SSH-Code.png" width="500">
+
+<img src="Media/t-cobbler.png" width="500">
+
+
 
