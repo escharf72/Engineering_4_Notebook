@@ -307,3 +307,15 @@ else:
  print("The correct word was: " + word)
  
  ``` 
+## GPIO Pins - SSH ##
+**Description:** The goal of this assignment was to learn how to connect to your Pi via wifi instead of a cord. This opens up endless possibilities for where the Pi can go and what it can do. 
+
+**Reflection:** This assignment wasn't long or complicated on paper, but in practice it was a seemingly endless series of issues to troubleshoot. Needless to say, patience and perseverence were necessary ingredients in this recipe. :) 
+
+Troubleshooting tips (most are chromebook-specific): 
+- Make sure that your t-cobbler is properly plugged into the Pi. Mine was backwards for a while and, needless to say, it wasn't working. 
+- When detaching your Pi from the computer after enabling SSH on BeagleTerm, plug in the battery before you pull the usb cable out of the computer. I was unsuccessful in connecting a few times because my Pi turned off when I unplugged it from the computer. 
+- A troubleshooting standby: if your LED isn't turning on and it seems like it should: 1. Do you have a resistor? 2. Is your wiring correct? (Look up a quick Fritzing diagram to check) 3. Could the LED be fried? (Check with a button battery or simple circuit) 4. Try another pin! Quite often pins will be broken or will only be able to be used for certain things and you just didn't know. 5. If not any of these things, then go back and check your code again. 
+- The password that it asks you for in the SSH app is raspberry, not your wifi password. (It took me a very long time to figure this out :) 
+
+
