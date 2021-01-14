@@ -1,0 +1,26 @@
+#gpio mode 5 in 
+#b=$(gpio read 5)
+#echo "$b"
+gpio -g mode 23 output
+num=0
+echo "$num"
+if [ $num <= 11 ]
+then 
+	gpio -g write 23 1
+	gpio -g write 23 0
+	echo "Blink!"
+	num = $((num + 1)) 
+else 
+	gpio -g write 23 0 
+	echo "Task complete"
+fi 
+#echo "Should I turn on the LEDs (yes/no)?"
+#read who
+#who="redLED"
+#echo "Welcome $who!"
+#if [$who == yes]
+#then 
+ # echo "turn on LED"
+#else
+ # echo "Do not turn on LED"
+#fi
