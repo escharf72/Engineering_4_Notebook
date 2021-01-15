@@ -1,21 +1,33 @@
+gpio -g mode 12 output
+num=0
+while [ $num -le 19 ] 
+do
+	/usr/bin/gpio -g toggle 12
+	sleep .5
+	let "num += 1"
+	echo "$num"
+done
+gpio -g write 12 0
+
+
 #gpio mode 5 in 
 #b=$(gpio read 5)
 #echo "$b"
-gpio -g mode 24 output
-num=0
-echo "$num"
-if [ $num <= 11 ]
-then 
+#gpio -g mode 24 output
+#num=0
+#echo "$num"
+#if [ $num <= 11 ]
+#then 
 	#gpio -g write 23 1 
 	#gpio -g write 23 0
-	gpio -g blink 24
-	echo "Blink!"
-	let "num += 1" 
-	echo "$num" 
-else 
-	gpio -g write 24 0 
-	echo "Task complete"
-fi 
+	#gpio -g blink 24
+	#echo "Blink!"
+	#let "num += 1" 
+	#echo "$num" 
+#else 
+	#gpio -g write 24 0 
+	#echo "Task complete"
+#fi 
 #echo "Should I turn on the LEDs (yes/no)?"
 #read who
 #who="redLED"
