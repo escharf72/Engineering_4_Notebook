@@ -335,11 +335,12 @@ Troubleshooting tips (most are chromebook-specific):
 * One step at a time. I notice that I often try to make everything happen in my first draft of code. Bad idea. For one, it makes troubleshooting a nightmare. But it's also not a good habit to build. It's so much better to start small and work your way up to the final product. For example, just see if you can turn on an LED. (That proved one of the harder tasks for me ;) Then see if you can make it blink. Then maybe comment that part out and use printing (echo in the case of bash) to figure out how to make a functioning if, for, or while loop. Then work with getting a variable or counter working. Then add the LED back in. etc. It will simplify things and help you to identify problems much more quickly. 
 * I would highly recommend using the command **man gpio**. It pulls up a list of gpio commands and further down the list gives explanations of what each does and some examples. This really helped me when I knew what I wanted to do but didn't know the words to use to make it happen. 
 
+Final code:
 <img src="Media/ledBASHcode.png" width="500">
 
+Rough Drafts and Experimental Code: 
 <img src="Media/ledBASHroughDrafts.png" width="500">
 
-{% include image.html url="Media/ledBASHcode.png" description="Final Code" %}
 
 
 
