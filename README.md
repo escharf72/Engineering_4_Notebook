@@ -325,4 +325,22 @@ Troubleshooting tips (most are chromebook-specific):
 <img src="Media/t-cobbler.png" width="500">
 
 
+## GPIO Pins - BASH ##
+**Description:** As in the previous assignment, connect to the Pi over wifi through SSH but this time make two LEDs blink 10 times using BASH script.
+
+**Reflection:** This assignment seemed easy at first, but I quickly discovered that there are layers of challenges in this simple task. It was kind of like being told to speak a simple sentence in Japanese without the aid of a Japanese speaker or Google Translate. In English you would just say it without any thought. But in order to commuicate the same thing in Japanese you need to study the characters, the pronunciation, the grammar rules, conjugation, etc. Turning on an led is about the most basic assignment one can give in the engineering world, but to do so in a new language took a lot of work to get us from the ground up to this task. 
+
+(Hopefully) Helpful Advice:
+* This task isn't simply making an LED blink, it is learning the basics of a new programming language. So approach it as such. If you were trying to say "The pink house is down the street." in Japanese, just looking up the individual words in the dictionary wouldn't be enough. You need context: How do you conjugate the verb to be? Do adjectives go before or after nouns? Is this the right word in the context? How do you do punctuation? Do I even write from left to right? I approached the task by trying to look up the "definitions" of fragmented parts and that method did not serve me well. In the end it forced me to do some research and attempt to understand the format and the context of the language. For example, I may have had all the right commands and characters, but I had incorrect spacing and so nothing was happening. I would recommend looking up websites that teach you the basics of coding in Bash script, like [this one](https://www.taniarascia.com/how-to-create-and-use-bash-scripts/) or [this one.](https://www.teknotut.com/en/first-raspberry-pi-project-blink-led/#Blink_Project)
+* One step at a time. I notice that I often try to make everything happen in my first draft of code. Bad idea. For one, it makes troubleshooting a nightmare. But it's also not a good habit to build. It's so much better to start small and work your way up to the final product. For example, just see if you can turn on an LED. (That proved one of the harder tasks for me ;) Then see if you can make it blink. Then maybe comment that part out and use printing (echo in the case of bash) to figure out how to make a functioning if, for, or while loop. Then work with getting a variable or counter working. Then add the LED back in. etc. It will simplify things and help you to identify problems much more quickly. 
+* I would highly recommend using the command **man gpio**. It pulls up a list of gpio commands and further down the list gives explanations of what each does and some examples. This really helped me when I knew what I wanted to do but didn't know the words to use to make it happen. 
+
+Final code:
+<img src="Media/ledBASHcode.png" width="500">
+
+Rough Drafts and Experimental Code: 
+<img src="Media/ledBASHroughDrafts.png" width="500">
+
+
+
 
