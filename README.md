@@ -336,10 +336,26 @@ Troubleshooting tips (most are chromebook-specific):
 * I would highly recommend using the command **man gpio**. It pulls up a list of gpio commands and further down the list gives explanations of what each does and some examples. This really helped me when I knew what I wanted to do but didn't know the words to use to make it happen. 
 
 Final code:
+
 <img src="Media/ledBASHcode.png" width="500">
 
 Rough Drafts and Experimental Code: 
+
 <img src="Media/ledBASHroughDrafts.png" width="500">
+
+## GPIO Pins - Python ##
+**Description:** Make two LEDs blink using Python instead of Bash. 
+
+**Reflections:** After writing a whole paragraph for the previous assignment (see above) about how you should take things one step at a time and not try to do everything at first, I ignored my own advice, and... nothing worked. (Go figure ;) But hey, I proved that the steps that I theorized from the past assignment were correct! 
+Once I learned my lesson, I began from the beginning, just trying to make one LED turn on. I used the print() function, which is invaluable when it comes to troubleshooting code. It showed me that it was entering the while true loop and there weren't errors, but still my LED wouldn't turn on. So I backtracked even more. I went back to my bash assignment and ran it to make sure that my led wasn't dead or anything like that. It turned out that my t-cobbler was attached to the Pi backwards, so nothing happened. Once I got that sorted out and knew that the LED was functioning, I went back to my Python code. From the bash asssignment, I knew that there was something funky about calling pins and which numbers actually meant which physical pins. And I had solved that with a -g in bash. So I looked, and found a command, but I guess it wasn't what I thought it was. So finally, I looked up a diagram **see below** and realized that my code was working fine but I was just wired to the wrong pin. After that, adding a second LED was super quick. I decided to make them alternate flashing, just because. 
+
+Final code:
+
+<img src="Media/gpioPythonCode.png" width="500">
+
+Gpio pin diagram:
+
+<img src="Media/gpioPinDiagram.png" width="500">
 
 
 
