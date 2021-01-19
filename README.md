@@ -343,7 +343,7 @@ Rough Drafts and Experimental Code:
 
 <img src="Media/ledBASHroughDrafts.png" width="500">
 
-## GPIO Pins - Python##
+## GPIO Pins - Python ##
 **Description:** Make two LEDs blink using Python instead of Bash. 
 
 **Reflections:** After writing a whole paragraph for the previous assignment (see above) about how you should take things one step at a time and not try to do everything at first, I ignored my own advice, and... nothing worked. (Go figure ;) But hey, I proved that the steps that I theorized from the past assignment were correct! 
