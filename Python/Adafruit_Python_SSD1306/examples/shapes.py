@@ -49,7 +49,7 @@ disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
 # disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST)
 
 # Note you can change the I2C address by passing an i2c_address parameter like:
-# disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3C)
+disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3d)
 
 # Alternatively you can specify an explicit I2C bus number, for example
 # with the 128x32 display you would use:
@@ -94,18 +94,18 @@ bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = padding
 # Draw an ellipse.
-draw.ellipse((x, top , x+shape_width, bottom), outline=255, fill=0)
-x += shape_width+padding
+#draw.ellipse((x, top , x+shape_width, bottom), outline=255, fill=0)
+#x += shape_width+padding
 # Draw a rectangle.
-draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=0)
-x += shape_width+padding
+#draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=0)
+#x += shape_width+padding
 # Draw a triangle.
-draw.polygon([(x, bottom), (x+shape_width/2, top), (x+shape_width, bottom)], outline=255, fill=0)
-x += shape_width+padding
+#draw.polygon([(x, bottom), (x+shape_width/2, top), (x+shape_width, bottom)], outline=255, fill=0)
+#x += shape_width+padding
 # Draw an X.
-draw.line((x, bottom, x+shape_width, top), fill=255)
-draw.line((x, top, x+shape_width, bottom), fill=255)
-x += shape_width+padding
+#draw.line((x, bottom, x+shape_width, top), fill=255)
+#draw.line((x, top, x+shape_width, bottom), fill=255)
+#x += shape_width+padding
 
 # Load default font.
 font = ImageFont.load_default()
@@ -115,8 +115,10 @@ font = ImageFont.load_default()
 #font = ImageFont.truetype('Minecraftia.ttf', 8)
 
 # Write two lines of text.
-draw.text((x, top),    'Hello',  font=font, fill=255)
-draw.text((x, top+20), 'World!', font=font, fill=255)
+draw.text((x, top), 'Accel Vals:',  font=font, fill=255)
+draw.text((x, top+15), 'x:', font=font, fill=255)
+draw.text((x, top+30), 'y:', font=font, fill=255)
+draw.text((x, top+45), 'z:', font=font, fill=255)
 
 # Display image.
 disp.image(image)
