@@ -358,5 +358,7 @@ Gpio pin diagram:
 <img src="Media/gpioPinDiagram.png" width="500">
 
 
+## Gpio Pins - I2C##
+**Description:** Write a program that takes the x, y, and z values from an accelerometer and prints them on an OLED screen. 
 
-
+**Reflection:** Combining the two codes took a while, but 
