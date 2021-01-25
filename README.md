@@ -358,7 +358,7 @@ Gpio pin diagram:
 <img src="Media/gpioPinDiagram.png" width="500">
 
 
-## Gpio Pins - I2C##
+## Gpio Pins - I2C ##
 **Description:** Write a program that takes the x, y, and z values from an accelerometer and prints them on an OLED screen. 
 
 **Reflection:** Combining the two codes took a while, but the hardest part was just troubleshooting the combined code that I had created. Coding can sometimes feel like making delicate pastries - if one little thing isn't right, nothing works. I had some spacing errors that had me confused for a while, and then I realized that I had the same name for two of the variables in my code, and therefore I wasn't gettting the correct values. They are simple things and not things I didn't understand, they were just things that I had overlooked, but things were the difference between the code working or only giving errors. 
