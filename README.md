@@ -358,5 +358,19 @@ Gpio pin diagram:
 <img src="Media/gpioPinDiagram.png" width="500">
 
 
+## Gpio Pins - I2C ##
+**Description:** Write a program that takes the x, y, and z values from an accelerometer and prints them on an OLED screen. 
 
+**Reflection:** Combining the two codes took a while, but the hardest part was just troubleshooting the combined code that I had created. Coding can sometimes feel like making delicate pastries - if one little thing isn't right, nothing works. I had some spacing errors that had me confused for a while, and then I realized that I had the same name for two of the variables in my code, and therefore I wasn't gettting the correct values. They are simple things and not things I didn't understand, they were just things that I had overlooked, but things were the difference between the code working or only giving errors. 
 
+Here is the math I did to get the values into the correct form, m/s². I had to round to different numbers in order to get the number of decimal places I wanted. 
+
+<img src="Media/VariableMath.png" width="500">
+
+This was the format I used to get the screen to print variable values. The x value is labeled x2 because I realized that I had already defined one of the screen variables as x, so I couldn't use the same variable again. 
+
+<img src="Media/Printingxyz.png" width="500">
+
+Here is the serial port printing the values as I ran the code: 
+
+<img src="Media/PrintingValues.png" width="500">
