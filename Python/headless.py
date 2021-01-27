@@ -12,6 +12,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 # Library for the screen
 import Adafruit_LSM303
+ 
 # Create a LSM303 instance.
 lsm303 = Adafruit_LSM303.LSM303()
 # Alternatively you can specify the I2C bus with a bus parameter:
@@ -69,6 +70,10 @@ while True:
 	#draw.text((x, top+16), 'x ={0}'.format(x2), font=font, fill=255)
 	#draw.text((x, top+30), 'y ={0}'.format(y), font=font, fill=255)
 	draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
+	draw.text((x, top + 50), '_______________________t', font=font, fill=255)
+	
+	display.hline(2, 3, 25, 1)
+	display.vline(5, 0, 25, 1) 
 	# Display image.
 	def horiz(l,r,t,c):
 		n = r-l+1
