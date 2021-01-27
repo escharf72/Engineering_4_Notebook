@@ -2,7 +2,7 @@
 import time
 import gc
 import math
-import adafruit_framebuf
+#import framebuf
 
 #Library for the accelerometer 
 import Adafruit_GPIO.SPI as SPI
@@ -30,14 +30,14 @@ height = disp.height
 image = Image.new('1', (width, height))
 print('Printing accelerometer & magnetometer X, Y, Z axis values, press Ctrl-C to quit...')
 
-def horiz(l,r,t,c):
-  n = r-l+1
-  for i in range(n):
-    oled.pixel(l+i, t, c)
-def vert(l,t,b,c):
-  n = b-t+1
-  for i in range(n):
-    oled.pixel(l, t+i, c)
+#def horiz(l,r,t,c):
+ # n = r-l+1
+  #for i in range(n):
+   # oled.pixel(l+i, t, c)
+#def vert(l,t,b,c):
+ # n = b-t+1
+  #for i in range(n):
+   # oled.pixel(l, t+i, c)
 
 while True:
 	# Read the X, Y, Z axis acceleration values and print them.
@@ -68,9 +68,16 @@ while True:
 	#draw.text((x, top), 'Accel Data:', font=font, fill=255)
 	#draw.text((x, top+16), 'x ={0}'.format(x2), font=font, fill=255)
 	#draw.text((x, top+30), 'y ={0}'.format(y), font=font, fill=255)
-	#draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
+	draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
 	# Display image.
+	def horiz(l,r,t,c):
+		n = r-l+1
+		for i in range(n):
+			oled.pixel(l+i, t, c)
+	def vert(l,t,b,c):
+		n = b-t+1
+		for i in range(n):
+			oled.pixel(l, t+i, c)
 	disp.image(image)
 	disp.display()
-
 
