@@ -31,15 +31,6 @@ height = disp.height
 image = Image.new('1', (width, height))
 print('Printing accelerometer & magnetometer X, Y, Z axis values, press Ctrl-C to quit...')
 
-#def horiz(l,r,t,c):
- # n = r-l+1
-  #for i in range(n):
-   # oled.pixel(l+i, t, c)
-#def vert(l,t,b,c):
- # n = b-t+1
-  #for i in range(n):
-   # oled.pixel(l, t+i, c)
-
 while True:
 	# Read the X, Y, Z axis acceleration values and print them.
 	accel, mag = lsm303.read()
@@ -48,41 +39,48 @@ while True:
 	x2  = round(accel_x / 100, 5)
 	y = round(accel_y / 100, 4)
 	z = round(accel_z / 100, 3)
-	print(x2,y,z) 
+	e = (11-abs(x2))*2.0454545454545
+	print(x2,y,z,e)
 	time.sleep(0.5)
 	# Get drawing object to draw on image.
 	draw = ImageDraw.Draw(image)
 	# Draw a black filled box to clear the image.
 	draw.rectangle((0,0,width,height), outline=0, fill=0)
 	# First define some constants to allow easy resizing of shapes.
-	padding = 2
+	padding = 5
+	xpadding = 25
 	shape_width = 20
-	top = padding
-	bottom = height-padding
+	top = padding+e
+	bottom = height-padding-9
 	# Move left to right keeping track of the current x position for drawing shapes.
 	x = padding
 	# Load default font.
 	font = ImageFont.load_default()
-  
-  
+ # +45 =   -11 
+ # +0  =    11
+ # +22.5   = 0
   # Write out variables on the screen
 	#draw.text((x, top), 'Accel Data:', font=font, fill=255)
 	#draw.text((x, top+16), 'x ={0}'.format(x2), font=font, fill=255)
 	#draw.text((x, top+30), 'y ={0}'.format(y), font=font, fill=255)
-	draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
-	draw.text((x, top + 50), '_______________________t', font=font, fill=255)
-	
-	display.hline(2, 3, 25, 1)
-	display.vline(5, 0, 25, 1) 
+	#draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
+	draw.text((x, top + 35), '___________________', font=font, fill=255)
+	draw.text((x, top + 45), ' x       y      z', font=font, fill=255)
+	# Draw a rectangle.
+	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
+	x += shape_width+xpadding	
+	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
+	x += shape_width+xpadding
+	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
 	# Display image.
-	def horiz(l,r,t,c):
-		n = r-l+1
-		for i in range(n):
-			oled.pixel(l+i, t, c)
-	def vert(l,t,b,c):
-		n = b-t+1
-		for i in range(n):
-			oled.pixel(l, t+i, c)
+	#def horiz(l,r,t,c):
+	#	n = r-l+1
+	#	for i in range(n):
+	#		oled.pixel(l+i, t, c)
+	#def vert(l,t,b,c):
+	#	n = b-t+1
+	#	for i in range(n):
+	#		oled.pixel(l, t+i, c)
 	disp.image(image)
 	disp.display()
 
