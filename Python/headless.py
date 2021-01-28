@@ -40,7 +40,9 @@ while True:
 	y = round(accel_y / 100, 4)
 	z = round(accel_z / 100, 3)
 	e = (11-abs(x2))*2.0454545454545
-	print(x2,y,z,e)
+	f = (11-abs(y))*2.0454545454545
+	g = (11-abs(z))*2.0454545454545
+	print(x2,y,z)
 	time.sleep(0.5)
 	# Get drawing object to draw on image.
 	draw = ImageDraw.Draw(image)
@@ -50,37 +52,27 @@ while True:
 	padding = 5
 	xpadding = 25
 	shape_width = 20
-	top = padding+e
+	top = padding
+	topx = padding+e
+	topy = padding+f
+	topz = padding+g
 	bottom = height-padding-9
 	# Move left to right keeping track of the current x position for drawing shapes.
 	x = padding
 	# Load default font.
 	font = ImageFont.load_default()
- # +45 =   -11 
- # +0  =    11
- # +22.5   = 0
-  # Write out variables on the screen
-	#draw.text((x, top), 'Accel Data:', font=font, fill=255)
-	#draw.text((x, top+16), 'x ={0}'.format(x2), font=font, fill=255)
-	#draw.text((x, top+30), 'y ={0}'.format(y), font=font, fill=255)
-	#draw.text((x, top+45), 'z ={0}'.format(z), font=font, fill=255)
+	# +45 =   -11
+	# +0  =    11
+	# +22.5   = 0
 	draw.text((x, top + 35), '___________________', font=font, fill=255)
 	draw.text((x, top + 45), ' x       y      z', font=font, fill=255)
-	# Draw a rectangle.
-	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
-	x += shape_width+xpadding	
-	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
+	# Draw a bar for each variable
+	draw.rectangle((x, topx, x+shape_width, bottom), outline=255, fill=255)
 	x += shape_width+xpadding
-	draw.rectangle((x, top, x+shape_width, bottom), outline=255, fill=255)
-	# Display image.
-	#def horiz(l,r,t,c):
-	#	n = r-l+1
-	#	for i in range(n):
-	#		oled.pixel(l+i, t, c)
-	#def vert(l,t,b,c):
-	#	n = b-t+1
-	#	for i in range(n):
-	#		oled.pixel(l, t+i, c)
+	draw.rectangle((x, topy, x+shape_width, bottom), outline=255, fill=255)
+	x += shape_width+xpadding
+	draw.rectangle((x, topz, x+shape_width, bottom), outline=255, fill=255)
+	# Display Image
 	disp.image(image)
 	disp.display()
 
