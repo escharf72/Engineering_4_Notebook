@@ -380,6 +380,8 @@ Here is the serial port printing the values as I ran the code:
 
 **Relections:** I was struggling with this assignment, but when I looked at classmates' readmes, they said that it was a surprisingly easy task. I was very confused. I backed up and did some step-by-step testing to learn how the variables worked and what dimensions I could manipulate to create the graph I wanted. I opted for a triple bar graph where the bars would get taller and shorter depending on the value of the variable at that moment. The most difficult part was just figuring out the math of how to scale it and where to subtract what values from which variables. (It was a good 10 min of (figuratively) banging my head against a wall to figure out the correct equation that would scale the numbers appropriately.) I opted to use rc.local to control the program without user input. What rc.local does is just immediately run your code as soon as the Pi connects to SSH. (Mine would not run properly, but it wasn't a result of the code or anything else I could find) Another student had recommended [this website](https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/) which I found helpful. 
 
+[Video Link](https://drive.google.com/file/d/1qM_0rrPyCeiY3RDpVR0J39x1D33PYVRT/view?usp=sharing) 
+
 Editing the rc.local file:
 
 <img src="Media/rcLocal.png" width="500">
