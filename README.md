@@ -386,5 +386,26 @@ Editing the rc.local file:
 
 
 Variable Bar Graph
+
 <img src="Media/HeadlessGraph.jpeg" width="500">
+
+
+## Flask ##
+**Description:** A super quick assignment/tutorial to show you how to set up your Pi as an IP connection and access it from another device. (Hello World intro assignment) 
+
+**Reflection:** The Raspberry Pi is amazing! It's so cool to see just how much you can do with this pocket-sized computer. 
+
+Running Flask Code:
+
+<img src="Media/Flask1.png" width="500">
+
+
+Logged in on my computer: 
+
+<img src="Media/Flask%20Web%20Browser.png" width="500">
+
+Login Confirmation: 
+
+<img src="Media/Flask-Loggedin.png" width="500">
+
 
