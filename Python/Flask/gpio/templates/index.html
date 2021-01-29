@@ -1,12 +1,54 @@
 <!doctype html>
 <html>
 <head>
-     <title>GPIO with Flask!</title>
+<title>GPIO LEDs with Flask!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn1 {
+  border: 2px solid #4CAF50; /* Green */
+  background-color: inherit;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 64px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  color: 2px solid #4CAF50; /* Green */
+}
+.btn2 {
+  border: 2px solid #f44336; /* Red */
+  background-color: inherit;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 64px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  color: 2px solid #f44336; /* Red */
+}
+
+.btn1:hover {
+background:#4CAF50;
+color: white;
+}
+.green {color: green;}
+
+.btn2:hover {
+background:#f44336;
+color: white;
+}
+.red {color: red;)
+
+</style>
 </head>
 <body>
 {{msg}}
 <form method="POST">
-     <button type="submit" name="submitBtn" value="You clicked!">Click me!</button>
+     <button type="submit" name="submitBtn" value="LED 1 on!" class="btn1 green">Press me to turn on LED 1!</button>
+     <button type="submit" name="submitBtn2" value="LED 2 on!" class="btn2 red">Press me to turn on LED 2!</button>
 </form>
 </body>
 </html>
+
