@@ -411,3 +411,8 @@ Login Confirmation:
 <img src="Media/Flask-Loggedin.png" width="500">
 
 
+## GPIO Pins- Flask ##
+**Description:** Create an html program and call it in a python app that allows another device to connect to the Pi's IP address and control LEDs through the page. 
+
+**Reflections:** This assignment was made possible by the following resources... :)
+- 
