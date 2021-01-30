@@ -431,7 +431,11 @@ I chose to do buttons that filled in when a mouse was hovering over them:
 ## Pi Camera ##
 **Description:** And just when you thought the Raspberry Pi couldn't get any cooler...   It takes photos too. 
 
-**Reflection:** The first half of the assignment was fairly straightforward. There are lots of websites and tutorials available to help you learn the basics of using the Pi's camera. I justed added in some print()s to let the user know what was going on. The second half of the assignment took much longer because of all the time spent on trial-and-error. There were lots of factors to consider: 
+**Reflection:** The first half of the assignment was fairly straightforward. There are lots of websites and tutorials available to help you learn the basics of using the Pi's camera. I justed added in some print()s to let the user know what was going on. 
+
+<img src="Media/CameraTest1.png" width="500">
+
+The second half of the assignment took much longer because of all the time spent on trial-and-error. There were lots of factors to consider: 
 1. How do you do special effects with the Pi's camera? (camera.image_effect) [Special effects](https://picamera.readthedocs.io/en/release-1.10/api_camera.html#picamera.camera.PiCamera.image_effect) 
 
 2. How do you make it go through the loop five times? (I used a variable called val that started =0 and just added to it each time I went through the loop until I got to 4) `while val <= 4:` and `val = val+1` 
@@ -442,3 +446,25 @@ I chose to do buttons that filled in when a mouse was hovering over them:
 My end solution: use the formatting things I learned in the Copypasta assignment (**datetime**) to have part of the file name be a timestamp, and then add the val number in front (turned to a str) and ".jpg" in the back to make each one unique. It looked like this: ` camera.capture(str(val)+filename+".jpg") ` 
 
 **Check out my photos folder to see the "mug shots" I took with different effects!** 
+
+
+## CopyPasta - Parent Detector ##
+**Description:** Follow the specific instructions to create a "parent detector" that uses a PIR (Passive Infrared Sensor) to recognize movement and trigger the camera to start recording. 
+
+**Reflection:** This lesson helped me to appreciate the open-ended aspect of the class and the autonomy that we usually have to make most of the decisions. :)  It was hard to get all of the instructions, especially because many of them weren't compatible with the Chromebook setup. However, I did learn a lot about how the camera works and how to save files that allowed me to go back and do the second part of the Pi Camera assignment. (Tip: When you are stuck on an assignment, skipping it or taking a break helps to give you new perspective when you come back. 
+**File-related Lessons:**
+1. First issue: On the previous assignment I had struggled to figure out how to save each photo with a different name so that they wouldn't just replace the previous photos. I tried just numbering them, but then the next time I ran the program, the photos just replaced the previous ones. 
+
+2. First part of the solution: Learning how to use timestamps as a way to give files unique names. [List of commands related to timestamps](https://strftime.org/) 
+This was great for the quick videos, giving them names based on their time stamps and helping me to differentiate between them. `camera.start_recording("video"+filename+".h264")` I labeled each one video(timestamp).h264 and wsa able to differentiate them. I found the %c command in the line `filename = "{0:%c}".format(datetime.now())` very nice because it gave me a lot of information without having to string together a lot of different commands. 
+
+3. Second issue: With the Pi Camera assignment, I was only taking pictures, and because of the speed of the photos, the timestamps were often the same, meaning I was still stuck where I had started. 
+
+4. Second part of the solution: I needed yet another variable to differentiate these files from one another. I decided to use val, since had already established that variable. It took a few trial-and-error runs, but I ended with this line: ` camera.capture(str(val)+filename+".jpg") ` It worked! 
+
+Stealth Mode Enabled:
+
+<img src="Media/StealthMode.png" width="500">
+
+
+<img src="Media/Done!.png" width="500">
