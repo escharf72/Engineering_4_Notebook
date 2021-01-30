@@ -452,6 +452,7 @@ My end solution: use the formatting things I learned in the Copypasta assignment
 **Description:** Follow the specific instructions to create a "parent detector" that uses a PIR (Passive Infrared Sensor) to recognize movement and trigger the camera to start recording. 
 
 **Reflection:** This lesson helped me to appreciate the open-ended aspect of the class and the autonomy that we usually have to make most of the decisions. :)  It was hard to get all of the instructions, especially because many of them weren't compatible with the Chromebook setup. However, I did learn a lot about how the camera works and how to save files that allowed me to go back and do the second part of the Pi Camera assignment. (Tip: When you are stuck on an assignment, skipping it or taking a break helps to give you new perspective when you come back. 
+
 **File-related Lessons:**
 1. First issue: On the previous assignment I had struggled to figure out how to save each photo with a different name so that they wouldn't just replace the previous photos. I tried just numbering them, but then the next time I ran the program, the photos just replaced the previous ones. 
 
