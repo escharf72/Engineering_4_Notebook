@@ -10,7 +10,7 @@ with picamera.PiCamera() as camera:
         camera.start_preview()
         camera.image_effect = effects[val] 
         time.sleep(2)
-        camera.capture('YourPhoto.jpg')
+        camera.capture('YourPhoto{counter}.jpg')
         print("Done")
         val = val+1
     else:
