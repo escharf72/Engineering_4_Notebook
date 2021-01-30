@@ -428,3 +428,17 @@ I chose to do buttons that filled in when a mouse was hovering over them:
 <img src="Media/GreenButton.png" width="500">
 
 
+## Pi Camera##
+**Description:** And just when you thought the Raspberry Pi couldn't get any cooler...   It takes photos too. 
+
+**Reflection:** The first half of the assignment was fairly straightforward. There are lots of websites and tutorials available to help you learn the basics of using the Pi's camera. I justed added in some print()s to let the user know what was going on. The second half of the assignment took much longer because of all the time spent on trial-and-error. There were lots of factors to consider: 
+1. How do you do special effects with the Pi's camera? (camera.image_effect) [Special effects](https://picamera.readthedocs.io/en/release-1.10/api_camera.html#picamera.camera.PiCamera.image_effect) 
+
+2. How do you make it go through the loop five times? (I used a variable called val that started =0 and just added to it each time I went through the loop until I got to 4) `while val <= 4:` and `val = val+1` 
+
+3. How do you change the image effect each time it goes through? (It took me a very long time to figure out how to do this, but in the end I decided to use an array, and it worked well.) [About arrays](https://www.w3schools.com/python/python_arrays.asp) 
+
+4. How do you get the program to save each file with a separate name so that each photo doesn't just replace the previous one? (This one took me a little while. I actually found it helpful to **skip ahead to the first Copypasta assignment** and then come back, as it gave me a better understanding of how the camera worked.) 
+My end solution: use the formatting things I learned in the Copypasta assignment (**datetime**) to have part of the file name be a timestamp, and then add the val number in front (turned to a str) and ".jpg" in the back to make each one unique. It looked like this: ` camera.capture(str(val)+filename+".jpg") ` 
+
+**Check out my photos folder to see the "mug shots" I took with different effects!** 
