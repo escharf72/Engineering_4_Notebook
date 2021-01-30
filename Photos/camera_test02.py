@@ -8,9 +8,11 @@ with picamera.PiCamera() as camera:
         print("Getting ready.... say cheese!")
         camera.resolution = (1024, 768)
         camera.start_preview()
-        camera.image_effect = effects[val] 
+        x = effects[val]
+        camera.image_effect = x
+        camera.annotate_text = x 
         time.sleep(2)
-        camera.capture('YourPhoto{counter}.jpg')
+        camera.capture('Image'+str(val)+'.jpg')
         print("Done")
         val = val+1
     else:
