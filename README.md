@@ -428,7 +428,7 @@ I chose to do buttons that filled in when a mouse was hovering over them:
 <img src="Media/GreenButton.png" width="500">
 
 
-## Pi Camera##
+## Pi Camera ##
 **Description:** And just when you thought the Raspberry Pi couldn't get any cooler...   It takes photos too. 
 
 **Reflection:** The first half of the assignment was fairly straightforward. There are lots of websites and tutorials available to help you learn the basics of using the Pi's camera. I justed added in some print()s to let the user know what was going on. The second half of the assignment took much longer because of all the time spent on trial-and-error. There were lots of factors to consider: 
