@@ -411,3 +411,20 @@ Login Confirmation:
 <img src="Media/Flask-Loggedin.png" width="500">
 
 
+## GPIO Pins- Flask ##
+**Description:** Create an html program and call it in a python app that allows another device to connect to the Pi's IP address and control LEDs through the page. 
+
+**Reflections:** This assignment was made possible by the following resources... :)
+1. I began to get discouraged when, on this assignment, I couldn't even get the example part working right. I had been given the code, and I had followed the directions, but it just wasn't working. [Kaymin's GitHub Readme](https://github.com/khester35/Engineering_4_Notebook) was exactly what I needed. In her readme, she showed the progression of things she tried in order to get rid of an error (which was the same one I had). At the end she explained the two changes she had to make in order to run the program. I would highly recommend checking out her reamdme if you are stuck as she does an excellent job walking the reader through her problem-solving process and offering specific solutions. 
+
+2. As far as formatting went, there are endless combinations of colors, sizes, shapes, and special effects that you can use. I recommend [this page](https://www.w3schools.com/css/css3_buttons.asp) and also [this one](https://www.w3schools.com/howto/howto_css_text_buttons.asp). They give clear instructions and lots of example code to help you build aesthetically pleasing buttons. [This](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_text_buttons2_) is example code from one of the websites and it shows where in the html file your button-related information needs to go. 
+
+I chose to do buttons that filled in when a mouse was hovering over them:
+
+<img src="Media/FlaskButtons.png" width="500">
+
+<img src="Media/RedButton.png" width="500">
+
+<img src="Media/GreenButton.png" width="500">
+
+
