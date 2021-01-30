@@ -1,7 +1,6 @@
 import time
 import picamera
 from datetime import datetime
-#capture_continuous(output, format=None, use_video_port=False, resize=None, splitter_port=0, burst=False, **options)
 val = 0
 filename = "{0:%c}".format(datetime.now())
 with picamera.PiCamera() as camera:
